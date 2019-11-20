@@ -6,7 +6,9 @@ class PetBrowser extends React.Component {
   render() {
     // console.log(this.props)
     return <div className="ui cards">
-      {this.props.pets.map(pet => <Pet pet={pet} />)}
+
+      {this.props.pets.map(pet => <Pet pet={pet} adoptPet={this.props.adoptPet} />)}
+      
     </div>
   }
 }

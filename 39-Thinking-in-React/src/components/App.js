@@ -58,10 +58,34 @@ class App extends React.Component {
   changeDisplay = () => {
     // debugger
 
-    let display = this.state.pets.filter(pet => pet.type === this.state.filters.type)
+    if(this.state.filters.type === 'all'){
+      this.setState({
+        displayPets: this.state.pets
+      })
+    }else{
+      let display = this.state.pets.filter(pet => pet.type === this.state.filters.type)
+
+      this.setState({
+        displayPets: display
+      })
+    }
+
+   
+  }
+
+  adoptPet = (adoptedPet) => {
+    // debugger
+    // pet.isAdopted = true
+
+    let newArray = this.state.displayPets.map(pet => {
+      if(pet === adoptedPet ){
+        return {...pet, isAdopted: true}
+      }
+      return pet
+    })
 
     this.setState({
-      displayPets: display
+      displayPets: newArray
     })
   }
 
@@ -81,7 +105,7 @@ class App extends React.Component {
               <Filters changeType={this.changeType} changeDisplay={this.changeDisplay}/>
             </div>
             <div className="twelve wide column">
-              <PetBrowser pets={this.state.displayPets} />
+              <PetBrowser pets={this.state.displayPets} adoptPet={this.adoptPet} />
             </div>
           </div>
         </div>
