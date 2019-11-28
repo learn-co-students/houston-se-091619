@@ -4,7 +4,6 @@ import 'semantic-ui-css/semantic.min.css';
 import paintings from './paintings'
 import PaintingList from './PaintingList';
 import PaintingForm from './PaintingForm';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -51,30 +50,17 @@ class App extends React.Component {
 
 
   render(){return (
-    <BrowserRouter>
   <div>
   {/* <p>current id value: {this.state.id}</p> */}
       <NavBar />
-      {/* <button className="ui inverted primary button" onClick={this.changeDisplay} > Add Painting</button>
+      <button className="ui inverted primary button" onClick={this.changeDisplay} > Add Painting</button>
       {this.state.displayForm 
       ? <PaintingForm addPainting={this.addPainting} />
       : <PaintingList paintings={this.state.paintings}/> 
-      } */}
-
-      {/* <Route path="/paintings" component={PaintingList} /> */}
-      <Switch>
-      <Route exact path="/paintings" render={() => <PaintingList paintings={this.state.paintings} /> } />
-
-      <Route path="/paintings/new" render={ (routerProps) =><PaintingForm addPainting={this.addPainting} {...routerProps} /> } />
-
-      {/* <Route path="/paintings/new" component={PaintingForm} /> */}
-      </Switch>
-     
-
-
+      }
 
     </div>
-    </BrowserRouter>
+ 
   
   );}
 }
