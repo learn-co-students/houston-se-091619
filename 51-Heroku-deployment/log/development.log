@@ -1,0 +1,497 @@
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170619203656)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170619203656"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateNotes (20170619203722)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "body" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170619203722"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-02 17:28:58.318098"], ["updated_at", "2019-07-02 17:28:58.318098"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "vidhi.sharma"], ["created_at", "2019-07-02 17:29:33.040447"], ["updated_at", "2019-07-02 17:29:33.040447"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Suffoco."], ["body", "Viduo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus."], ["created_at", "2019-07-02 17:29:33.827301"], ["updated_at", "2019-07-02 17:29:33.827301"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Asporto vado tener."], ["body", "Addo accendo vomer. Umquam curriculum eaque. Depono vito vitiosus.\\nArmo vivo pecco. Volo curiositas verto. Toties iure accusator.\\nAdipiscor assentator denego. Ultio curtus contigo. Accendo vultuosus artificiose."], ["created_at", "2019-07-02 17:29:33.831513"], ["updated_at", "2019-07-02 17:29:33.831513"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Suppono caelum thymbra acer."], ["body", "Tamisium laboriosam curso. Denuo capto condico. Vetus pecto concedo.\\nVolutabrum sol asperiores. Viscus tui numquam. Cunabula mollitia depraedor.\\nVulnus contra sunt. Totidem ocer appono. Debitis autem est."], ["created_at", "2019-07-02 17:29:33.834815"], ["updated_at", "2019-07-02 17:29:33.834815"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Delinquo."], ["body", "Suscipit ut coruscus. Solus tantillus adopto. Arma supellex decretum.\\nRepellat caute aut. Decretum causa allatus. Architecto apto vestigium.\\nArmarium utrum culpo. Circumvenio angelus laboriosam. Consectetur virgo cetera."], ["created_at", "2019-07-02 17:29:33.837612"], ["updated_at", "2019-07-02 17:29:33.837612"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Confugo viscus."], ["body", "Versus comis impedit. Audio abduco volaticus. Ea tandem ut.\\nCaute timor adultus. Tutamen in adversus. Sordeo calculus ipsum.\\nSub cervus colo. Cohors sed bene. Ustilo volaticus deputo."], ["created_at", "2019-07-02 17:29:33.840336"], ["updated_at", "2019-07-02 17:29:33.840336"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Cresco socius teneo."], ["body", "Unde volaticus facere. Bonus condico sublime. Ratione tepidus depromo.\\nMolestias voluntarius considero. Deduco allatus itaque. Tego et qui.\\nAdipisci ventito vulnus. Quae amo deripio. Sordeo despirmatio urbanus."], ["created_at", "2019-07-02 17:29:33.843254"], ["updated_at", "2019-07-02 17:29:33.843254"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Causa thymbra coma truculenter."], ["body", "Compono trepide deinde. Esse voluptas despirmatio. Consequuntur sordeo et.\\nVinitor aeger commodo. Hic deporto fuga. Velit adiuvo provident.\\nConsequatur sopor auxilium. Truculenter ad aeger. Pecunia sordeo perspiciatis."], ["created_at", "2019-07-02 17:29:33.847730"], ["updated_at", "2019-07-02 17:29:33.847730"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Sumptus auditor vere."], ["body", "Optio tribuo crudelis. Taceo talio cur. Convoco rem thesis.\\nEt decerno defigo. Templum atque ex. Solus eos vestigium.\\nInfit nam armo. Degusto strues voluptatem. Arbor amplitudo alter."], ["created_at", "2019-07-02 17:29:33.852968"], ["updated_at", "2019-07-02 17:29:33.852968"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Caecus caute defero."], ["body", "Libero damnatio animadverto. Angustus tyrannus asporto. Dignissimos subito torrens.\\nToties uredo triduana. Ipsam theca et. Avaritia sit terreo.\\nVigor suffoco clarus. Currus tenetur ut. Crebro altus autem."], ["created_at", "2019-07-02 17:29:33.857027"], ["updated_at", "2019-07-02 17:29:33.857027"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Defungo thesis."], ["body", "Ut adiuvo dolorem. Varietas creta voluptate. Eveniet adamo optio.\\nSufficio cum tres. Sed et clarus. Assentator ara tracto.\\nDegero depraedor cupio. Asperiores ambulo tametsi. Voluptas tot vis."], ["created_at", "2019-07-02 17:29:33.859635"], ["updated_at", "2019-07-02 17:29:33.859635"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/notes" for 127.0.0.1 at 2019-12-30 10:26:10 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/notes"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2019-12-30 10:26:11 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/notes" for 127.0.0.1 at 2019-12-30 10:26:27 -0600
+Processing by Api::V1::NotesController#index as HTML
+  [1m[36mNote Load (0.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.96ms)
+Completed 200 OK in 108ms (Views: 95.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/v1/notes/api/v1/notes" for 127.0.0.1 at 2019-12-30 10:26:38 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/notes/api/v1/notes"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/notes/api/v1/notes" for 127.0.0.1 at 2019-12-30 10:26:41 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/notes/api/v1/notes"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/notes/api/v1/notes" for 127.0.0.1 at 2019-12-30 10:26:42 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/notes/api/v1/notes"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/notes/api/v1/notes" for 127.0.0.1 at 2019-12-30 10:26:55 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/notes/api/v1/notes"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/notes" for 127.0.0.1 at 2019-12-30 10:31:34 -0600
+Processing by Api::V1::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.91ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/api/v1/notes/1" for 127.0.0.1 at 2019-12-30 10:31:45 -0600
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"title"=>"Suffoco.", "body"=>"Viduoooooooo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus.", "user_id"=>1, "id"=>"1", "note"=>{"user_id"=>1, "title"=>"Suffoco.", "body"=>"Viduoooooooo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus."}}
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: id, note
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "notes" SET "body" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["body", "Viduoooooooo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus."], ["updated_at", "2019-12-30 16:31:45.389489"], ["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered NoteSerializer with ActiveModelSerializers::Adapter::Attributes (1.14ms)
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/notes" for 127.0.0.1 at 2019-12-30 10:31:45 -0600
+Processing by Api::V1::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.44ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/notes" for 127.0.0.1 at 2019-12-30 11:08:18 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::NotesController#index as */*
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (106.31ms)
+Completed 200 OK in 211ms (Views: 188.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/api/v1/notes" for 127.0.0.1 at 2019-12-30 11:08:36 -0600
+Processing by Api::V1::NotesController#index as */*
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.86ms)
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/api/v1/notes/1" for 127.0.0.1 at 2019-12-30 11:08:47 -0600
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"title"=>"Suffoco.", "body"=>"viduo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus.", "user_id"=>1, "id"=>"1", "note"=>{"user_id"=>1, "title"=>"Suffoco.", "body"=>"viduo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus."}}
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: id, note
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "notes" SET "body" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["body", "viduo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus."], ["updated_at", "2019-12-30 17:08:47.370532"], ["id", 1]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered NoteSerializer with ActiveModelSerializers::Adapter::Attributes (2.71ms)
+Completed 200 OK in 13ms (Views: 3.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/v1/notes" for 127.0.0.1 at 2019-12-30 11:08:47 -0600
+Processing by Api::V1::NotesController#index as */*
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.9ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/v1/notes/1" for 127.0.0.1 at 2019-12-30 11:08:48 -0600
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"title"=>"Suffoco.", "body"=>"viduo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus.", "user_id"=>1, "id"=>"1", "note"=>{"user_id"=>1, "title"=>"Suffoco.", "body"=>"viduo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus."}}
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: id, note
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered NoteSerializer with ActiveModelSerializers::Adapter::Attributes (2.01ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/notes" for 127.0.0.1 at 2019-12-30 11:08:48 -0600
+Processing by Api::V1::NotesController#index as */*
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.24ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5533105867660614390);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170619203656)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170619203656"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateNotes (20170619203722)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "notes" ("id" serial primary key, "user_id" integer, "title" character varying, "body" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170619203722"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-30 17:26:06.239487"], ["updated_at", "2019-12-30 17:26:06.239487"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5533105867660614390)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "vidhi.sharma"], ["created_at", "2019-12-30 17:26:15.614082"], ["updated_at", "2019-12-30 17:26:15.614082"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Somniculosus."], ["body", "Crux defaeco talio. Admoveo illum est. Denuo totam corona.\\nValens tribuo deinde. Sit conduco coma. Corrupti crinis vos.\\nVehemens modi vitiosus. Stipes aliqua thermae. Deficio quia confero."], ["created_at", "2019-12-30 17:26:16.342845"], ["updated_at", "2019-12-30 17:26:16.342845"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Torqueo fuga caelestis."], ["body", "Agnosco quis ago. Ipsum abduco xiphias. Similique adsuesco voluptas.\\nIn video tergo. Deleo universe cognomen. Admitto spoliatio appositus.\\nTunc crastinus addo. Creber usque bene. Atque ocer deputo."], ["created_at", "2019-12-30 17:26:16.345783"], ["updated_at", "2019-12-30 17:26:16.345783"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Cunabula vitium voveo."], ["body", "Mollitia viduo adnuo. Vomica blanditiis comedo. Patior commodi colo.\\nAutem aer verbum. Usque despecto ager. Contego praesentium aegrotatio.\\nSummisse depulso sortitus. Contego depopulo odio. Sol adnuo adsuesco."], ["created_at", "2019-12-30 17:26:16.348501"], ["updated_at", "2019-12-30 17:26:16.348501"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Vinculum utrimque."], ["body", "Numquam defetiscor ustulo. Abscido et cupiditas. Cerno supellex validus.\\nUrbs vulpes magni. Autem molestiae vinco. Clam undique pauper.\\nVolutabrum tempore calamitas. Accipio tutis temporibus. Velut bellicus sortitus."], ["created_at", "2019-12-30 17:26:16.351559"], ["updated_at", "2019-12-30 17:26:16.351559"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Vix tamisium uredo despecto."], ["body", "Earum stips acer. Vita voro concido. Adsum creo et.\\nCreo expedita sumptus. Barba comis verto. Iusto amita delectus.\\nCupiditas audio tracto. Odio tamdiu aggredior. Civis antiquus thesis."], ["created_at", "2019-12-30 17:26:16.354342"], ["updated_at", "2019-12-30 17:26:16.354342"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Ciminatio."], ["body", "Timor aedificium et. Tui antiquus compono. Sophismata colligo vero.\\nReiciendis numquam averto. Talis ab speculum. Tardus demoror demum.\\nOcer rerum concedo. Corrumpo asporto velut. Crur verto tamen."], ["created_at", "2019-12-30 17:26:16.356955"], ["updated_at", "2019-12-30 17:26:16.356955"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Vilis barba eligendi amita."], ["body", "Aut crustulum accedo. Inflammatio communis coepi. Tergo vae aequus.\\nBibo denique demens. Non conventus ascit. Doloremque terminatio ullus.\\nIpsa uxor comparo. Animus terra tactus. Excepturi vester color."], ["created_at", "2019-12-30 17:26:16.359717"], ["updated_at", "2019-12-30 17:26:16.359717"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Consuasor bestia."], ["body", "Adduco cedo animi. Ultio ullam demergo. Condico degusto creo.\\nTantum aegre omnis. Utrimque cupiditate crastinus. Atque substantia ea.\\nPeccatus blandior aeger. Amplus facilis utpote. Earum cogito benevolentia."], ["created_at", "2019-12-30 17:26:16.362575"], ["updated_at", "2019-12-30 17:26:16.362575"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Texo amaritudo decens cimentarius."], ["body", "Verus eum ipsam. Crur civitas comes. Umquam curatio commodi.\\nRerum sono quis. Crudelis conculco certe. Clam certus trado.\\nCarpo armarium tamisium. Copia adulatio avoco. Adduco angulus id."], ["created_at", "2019-12-30 17:26:16.365196"], ["updated_at", "2019-12-30 17:26:16.365196"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "Necessitatibus."], ["body", "Tui videlicet trans. Minus soleo tandem. Cultura velit cunae.\\nDecerno cogito adinventitias. Caries ciminatio adsum. Vacuus antiquus capio.\\nCoaegresco cibus absum. Apto rerum calco. Consequatur caste cunabula."], ["created_at", "2019-12-30 17:26:16.367407"], ["updated_at", "2019-12-30 17:26:16.367407"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNote Load (1.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1117011887731945170);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1117011887731945170)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "vidhi.sharma"], ["created_at", "2019-12-30 17:36:35.312365"], ["updated_at", "2019-12-30 17:36:35.312365"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNote Load (1.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Creta argentum conturbo."], ["body", "Officia tabernus villa. Blandior alienus crapula. Tenetur torrens totus.\\nDenego ubi reiciendis. Supplanto confido fugiat. Solitudo culpo strues.\\nTriduana ex cum. Id teneo delectatio. Aestivus solio desparatus."], ["created_at", "2019-12-30 17:36:36.159826"], ["updated_at", "2019-12-30 17:36:36.159826"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Cohaero coaegresco cotidie."], ["body", "Bestia cruentus non. Cubo explicabo vereor. Tego uredo reprehenderit.\\nAudio usitas voro. Triginta somnus sursum. Comis textus ars.\\nVinco casus umquam. Crux id cena. Crux cicuta quasi."], ["created_at", "2019-12-30 17:36:36.163443"], ["updated_at", "2019-12-30 17:36:36.163443"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Minus."], ["body", "Tergo adhuc cognomen. Defendo viriliter terreo. Stips deserunt laborum.\\nUt arbor cernuus. Tunc adipiscor thesaurus. Vulnero temperantia aufero.\\nDelinquo defendo ulterius. Verecundia damno adnuo. Terga certus officia."], ["created_at", "2019-12-30 17:36:36.166121"], ["updated_at", "2019-12-30 17:36:36.166121"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Impedit."], ["body", "Tondeo calamitas sublime. Sophismata magnam tardus. Rerum ullus soluta.\\nVindico sopor tabgo. Patruus theologus bellicus. Sollers demo consequatur.\\nQuia tollo territo. Omnis demitto valeo. Cunctatio convoco eius."], ["created_at", "2019-12-30 17:36:36.168854"], ["updated_at", "2019-12-30 17:36:36.168854"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Truculenter cubitum vinco."], ["body", "Abstergo desparatus laudantium. Certe combibo sumo. Tamdiu depulso caterva.\\nVerumtamen comitatus tametsi. Aeneus tantum vinitor. Tabella tum comedo.\\nAdmitto commodi ipsa. Tersus rerum comitatus. Consectetur eos omnis."], ["created_at", "2019-12-30 17:36:36.171345"], ["updated_at", "2019-12-30 17:36:36.171345"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Acceptus depopulo dolorum."], ["body", "Acies nihil voluptatem. Repellat abscido vorax. Enim vix voluptates.\\nUtrimque neque patior. Aspicio blandior curia. Aut virtus pecus.\\nDolores amor atqui. Vito strues cum. Delicate quis cui."], ["created_at", "2019-12-30 17:36:36.173785"], ["updated_at", "2019-12-30 17:36:36.173785"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Tempora vilitas una coma."], ["body", "Cenaculum antepono tubineus. Colo auditor cursus. Talio vae tergiversatio.\\nSpes vulnero cursim. Animus viduo adnuo. Turpis deficio creo.\\nAtrox suscipit basium. Cognomen allatus crinis. Considero alius universe."], ["created_at", "2019-12-30 17:36:36.176262"], ["updated_at", "2019-12-30 17:36:36.176262"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Tantum."], ["body", "Defessus color pectus. Celer auris demitto. Articulus esse tertius.\\nAtque umerus ait. Accedo aduro iure. Repellat cras ullus.\\nAlter aureus vilis. Utrimque tredecim arbitro. Viridis sum combibo."], ["created_at", "2019-12-30 17:36:36.179158"], ["updated_at", "2019-12-30 17:36:36.179158"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Ancilla temperantia."], ["body", "Rerum delectatio arguo. Terminatio concedo cattus. Arbitro terreo vacuus.\\nPecto et depromo. Conculco pariatur vesco. Aqua vallum theologus.\\nVentito voluptas ipsa. Complectus circumvenio quas. Curia enim vero."], ["created_at", "2019-12-30 17:36:36.181939"], ["updated_at", "2019-12-30 17:36:36.181939"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Trans."], ["body", "Vulnus contego basium. Et truculenter ut. Cotidie celo deludo.\\nTabesco urbanus abstergo. Ut adsidue turba. Sustineo via et.\\nMollitia cresco degenero. Valetudo corona aliqua. Cum celer titulus."], ["created_at", "2019-12-30 17:36:36.184176"], ["updated_at", "2019-12-30 17:36:36.184176"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
